@@ -4,7 +4,7 @@ use std::thread;
 fn main() {
     // Once you've set up the Shop and Card structs, you should be able to
     // uncomment this code
-    
+
     let comic_book_shoppe = Shop {
         cards: [
             Card {
@@ -68,7 +68,7 @@ fn main() {
 
 /// A Shop is a collection of 3 cards.
 struct Shop {
-    cards: [Card; 3]
+    cards: [Card; 3],
 }
 
 impl Shop {
@@ -76,38 +76,38 @@ impl Shop {
     fn most_expensive(&self) -> u32 {
         let total = 3;
         let mut num = 0;
-        let mut maxCardPrice: u32 = 0;
+        let mut max_card_price: u32 = 0;
         while num < total {
-            if self.cards[num].price > maxCardPrice{
-                maxCardPrice = self.cards[num].price;
-            } 
+            if self.cards[num].price > max_card_price {
+                max_card_price = self.cards[num].price;
+            }
             num += 1;
         }
-        return maxCardPrice;
+        return max_card_price;
     }
 
     /// Get the total damage of all cards in the shop
     fn total_damage(&self) -> u32 {
         let total = 3;
         let mut num = 0;
-        let mut sumDamage: u32 = 0;
+        let mut sum_damage: u32 = 0;
         while num < total {
-            sumDamage += self.cards[num].damage;
+            sum_damage += self.cards[num].damage;
             num += 1;
         }
-        return sumDamage;
+        return sum_damage;
     }
 
     /// Get the total health of all cards in the shop
     fn total_health(&self) -> u32 {
         let total = 3;
         let mut num = 0;
-        let mut sumHealth: u32 = 0;
+        let mut sum_health: u32 = 0;
         while num < total {
-            sumHealth += self.cards[num].health;
+            sum_health += self.cards[num].health;
             num += 1;
         }
-        return sumHealth;
+        return sum_health;
     }
 }
 
@@ -115,7 +115,7 @@ impl Shop {
 struct Card {
     price: u32,
     health: u32,
-    damage: u32
+    damage: u32,
 }
 
 #[cfg(test)]
